@@ -1,4 +1,4 @@
-# ml-07-applied
+# ml-07-applied-sandra
 
 [![Workflow Guide](https://img.shields.io/badge/Pro--Guide-pro--analytics--02-green)](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/)
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](./pyproject.toml)
@@ -6,10 +6,27 @@
 
 > Professional Python project: investigating a deployed machine learning model.
 
+---
+
+## 👩🏽‍💻 Author
+
+**Sandra Otubushin**
+
+- GitHub: https://github.com/sandra8918
+- Repository: https://github.com/sandra8918/ml-07-applied-sandra
+- Live Site: https://sandra8918.github.io/ml-07-applied-sandra/
+
+---
+
+## 📌 Project Attribution
+
+This project is based on the original **ml-07-applied** project created by Denise Case. It has been adapted as part of my professional analytics coursework.
+
+---
+
 ## Project Description
 
-This project focuses on learning to interrogate a deployed ML model
-by probing it systematically with different inputs.
+This project focuses on learning to interrogate a deployed machine learning model by probing it systematically with different inputs.
 
 We learn to:
 
@@ -18,31 +35,41 @@ We learn to:
 - identify decision boundaries and edge cases
 - interpret model behavior from the outside
 
+---
+
 ## Example Notebook + Your Notebook
 
 Keep the example notebook as it is.
-Either copy it or use it to build a new notebook that ends in _yourname.
-See [docs/your-files.md] for more.
+Either copy it or use it to build a new notebook that ends in `_yourname`.
+
+See [docs/your-files.md](docs/your-files.md) for more.
 
 Links:
 
 - [ml_07_case.ipynb](notebooks/ml_07_case.ipynb)
 
+---
+
 ## Working Files
 
 You'll work with these areas:
 
-- **data/raw** - raw data for exploration (only if you add a dataset)
-- **docs/** - project narrative and documentation
-- **src/mlstudio/** - the app is an example; run only (no need to modify)
-- **notebooks/** - interactive analysis
-- **pyproject.toml** - update authorship & links
-- **zensical.toml** - update authorship & links
+- **data/raw** – raw data for exploration (only if you add a dataset)
+- **docs/** – project narrative and documentation
+- **src/mlstudio/** – the app is an example; run only (no need to modify)
+- **notebooks/** – interactive analysis
+- **pyproject.toml** – update authorship and project links
+- **zensical.toml** – update documentation settings and links
+
+---
 
 ## Additional Packages
 
-This project uses `requests` to make the calls.
-Be sure the requests package is listed in `pyproject.toml`.
+This project uses the `requests` package to communicate with the deployed prediction API.
+
+Be sure the `requests` package is listed in `pyproject.toml`.
+
+---
 
 ## Instructions (pro-analytics-02)
 
@@ -56,18 +83,21 @@ to complete:
 4. Phase 4. **Modify**
 5. Phase 5. **Apply**
 
+---
+
 ## Challenges
 
 Challenges are expected.
-Sometimes instructions may not quite match your operating system.
-When issues occur, share screenshots, error messages, and details about what you tried.
-Working through issues is part of implementing professional projects.
+
+Sometimes instructions may not exactly match your operating system. If issues occur, share screenshots, error messages, and details about what you tried. Working through technical issues is part of implementing professional software projects.
+
+---
 
 ## Success
 
-After completing Phase 1. **Start & Run**, you'll have your own GitHub project,
-with the example notebook executed and committed,
-and running the example module will print out:
+After completing **Phase 1 – Start & Run**, you'll have your own GitHub project with the example notebook executed and committed.
+
+Running the example module should print:
 
 ```shell
 ========================
@@ -76,6 +106,8 @@ Executed successfully!
 ```
 
 A new file `project.log` will appear in the root project folder.
+
+---
 
 ## Command Reference
 
@@ -88,18 +120,13 @@ After you get a copy of this repo in your own GitHub account,
 open a machine terminal in your `Repos` folder:
 
 ```shell
-# Replace username with YOUR GitHub username.
-git clone https://github.com/username/ml-07-applied
+git clone https://github.com/sandra8918/ml-07-applied-sandra.git
 
-cd ml-07-applied
+cd ml-07-applied-sandra
 code .
 ```
 
 ### In a VS Code terminal
-
-These are listed for convenience.
-For best results, follow the detailed instructions in
-[pro-analytics-02 guide](https://denisecase.github.io/pro-analytics-02/).
 
 ```shell
 uv self update
@@ -125,49 +152,50 @@ uv run python -m pyright
 uv run python -m pytest
 uv run python -m zensical build
 
-# save progress
 git add -A
-git commit -m "update"
-git push -u origin main
+git commit -m "Update authorship"
+git push
 ```
 
 </details>
 
+---
+
 ## Notes
 
 - Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.
-- Use `CTRL+f` to find (and replace) text within a file.
+- Use `CTRL+F` to find (and replace) text within a file.
 - You do not need to add to or modify `tests/`. They are provided for example only.
 - Many files are silent helpers. Explore as you like, but nothing is required.
-- You do NOT need to understand everything; understanding builds naturally over time.
+- You do **NOT** need to understand everything; understanding builds naturally over time.
 
-## Troubleshooting >>>
+---
 
-If you see something like this in your terminal: `>>>` or `...`
+## Troubleshooting
+
+If you see something like this in your terminal:
+
+```text
+>>>
+```
+
+or
+
+```text
+...
+```
+
 You accidentally started Python interactive mode.
-It happens.
-Press `Ctrl+c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
+
+Press **Ctrl+C** (or **Ctrl+Z** then **Enter** on Windows) to exit.
+
+---
+
 
 ## Example Output (Can Remove this Section after You Verify)
 
 ```shell
-| INFO | ML | Summarize workflow........
-| INFO | ML | ========================
-| INFO | ML | SUMMARY
-| INFO | ML | ========================
-| INFO | ML | Dataset: hours_scores_case
-| INFO | ML | Original rows: 10
-| INFO | ML | Clean rows: 10
-| INFO | ML | Features: ['hours_studied', 'practice_quizzes', 'attendance_pct', 'sleep_hours', 'prior_score']
-| INFO | ML | Target: score
-| INFO | ML | ----- in a script, call plt.show() once at the end to display all charts -----
-| INFO | ML | ----- in a script, CLOSE the chart windows with the close button to CONTINUE -----
-| INFO | ML | Workflow complete
-| INFO | ML | IMPORTANT: This script creates chart windows.
-| INFO | ML | Close chart windows and terminate this process with CTRL+c as needed.
-| INFO | ML | ========================
 | INFO | ML | Executed successfully!
-| INFO | ML | ========================
 ```
 
 ## Findings and Visuals
