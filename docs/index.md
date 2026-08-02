@@ -21,25 +21,75 @@ to get the example projects running on your machine.
 
 ## Phase 4. Technical Modification
 
-Describe your small technical modification to the example project.
+For my technical modification, I expanded the bill length feature sweep used to investigate the deployed penguin prediction model.
 
-Include:
+Originally, the notebook evaluated bill lengths from **30 mm to 60 mm** using **20 evenly spaced values**. I modified the code to evaluate bill lengths from **28 mm to 65 mm** using **30 evenly spaced values**.
 
-- What you changed
-- Why you chose that change
-- How you verified that it worked
-- What result, output, chart, metric, or behavior confirmed the change
+I chose this modification because it allowed me to observe the prediction boundary over a wider range of values and determine whether the model continued making consistent predictions outside the original testing range.
 
-Compared with the example project,
-explain what is different and why the change matters.
+After rerunning the notebook, the updated scatter plot showed additional prediction points while maintaining a clear transition between Adelie and Chinstrap penguins. The notebook executed successfully, all visualizations were updated, and the modified notebook was committed and pushed to GitHub.
 
-Was it easy, or surprisingly challenging and why do you think so?
+Compared with the original example, my version explores a larger feature range, providing a better understanding of the deployed model's prediction behavior.
 
 ## Phase 5. Custom Project
 
-Describe your custom investigation of the deployed model.
+### Basis and API
 
-Be specific about what changed from the example project.
+The project investigates a deployed machine learning model that predicts penguin species using physical measurements.
+
+The API endpoint is:
+
+https://ml-penguin-predictor.onrender.com/predict
+
+The model accepts several numerical measurements, including bill length, bill depth, flipper length, and body mass, then predicts the penguin species.
+
+I kept the same deployed API because the goal of this module was to understand and investigate the model rather than replace it.
+
+---
+
+### Investigation Approach
+
+My investigation focused on understanding how changing bill length affected the predicted species.
+
+I expanded the feature sweep from **30–60 mm** to **28–65 mm** and increased the number of test values from **20** to **30**.
+
+I also reviewed edge cases provided by the notebook, including missing values, negative values, zero body mass, and extremely large bill lengths.
+
+---
+
+### Findings: Feature Sensitivity
+
+The results showed that bill length strongly influenced the predicted species.
+
+Predictions remained **Adelie** for smaller bill lengths and changed to **Chinstrap** once the bill length reached approximately **43 mm**.
+
+Expanding the sweep confirmed that larger bill lengths continued producing Chinstrap predictions.
+
+The decision boundary appeared stable and consistent across the wider testing range.
+
+---
+
+### Findings: Edge Cases
+
+The deployed API responded differently depending on the input.
+
+Missing required values generated a **400 Bad Request** error.
+
+Extreme values still returned predictions, even when the measurements were unrealistic.
+
+Negative measurements and zero body mass were accepted by the API and still produced predictions, suggesting that additional input validation could improve robustness.
+
+---
+
+### Summary
+
+This investigation showed that bill length has a strong influence on species prediction.
+
+The deployed model behaved consistently across a wider range of inputs and maintained a clear prediction boundary.
+
+However, the API would benefit from stronger validation to reject impossible measurements before generating predictions.
+
+This type of investigation could be applied to many deployed machine learning APIs to understand prediction boundaries, identify weaknesses, and improve model reliability.
 
 ### Basis and API
 
